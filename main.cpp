@@ -44,7 +44,7 @@ int main() {
     int inputUnit;
     while(true){
         std::cin>>inputUnit;
-        if(inputUnit!=0 || inputUnit!=1){
+        if(inputUnit==2){ //type 2 to end the loop
             break;
         }
         inputVector.push_back(inputUnit);
