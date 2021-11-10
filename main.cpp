@@ -40,49 +40,22 @@ int findPath(std::vector<int> v){
 }
 
 int main() {
-    std::vector<int> inputVector;
-    int inputUnit;
-    while(true){
-        std::cin>>inputUnit;
-        if(inputUnit==2){ //type 2 to end the loop
-            break;
+    while(true) {
+        std::vector<int> inputVector;
+        int inputUnit;
+        while (true) {
+            std::cin >> inputUnit;
+            if (inputUnit != 1 && inputUnit != 0) { //type 2 to end the loop
+                break;
+            }
+            inputVector.push_back(inputUnit);
         }
-        inputVector.push_back(inputUnit);
+        int mazeSize= sqrt(inputVector.size());
+        if(mazeSize*mazeSize==inputVector.size()){
+            std::cout << findPath(inputVector);
+            break;
+        } else{
+            std::cout<<"Error! Print maze correctly!"<<std::endl;
+        }
     }
-    std::cout<<findPath(inputVector);
 }
-// my maze 10x10
-//1 1 0 0 0 0 0 0 0 0
-//1 0 0 1 1 0 1 1 1 1
-//1 1 0 0 1 1 1 0 0 1
-//0 1 1 0 1 0 0 0 1 1
-//1 0 1 1 1 1 0 0 0 1
-//0 0 0 0 1 0 0 1 1 1
-//1 1 1 1 1 0 0 1 0 0
-//1 0 0 1 0 0 1 1 1 0
-//1 1 0 0 0 0 0 0 1 0
-//1 1 1 1 0 0 0 0 1 1
-
-// my maze 20x20
-//1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-//1 0 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-//1 1 0 0 1 1 1 0 0 1 0 1 0 1 0 0 1 1 1 0
-//0 1 1 0 1 0 0 0 1 1 1 1 0 1 0 0 1 0 1 0
-//1 0 1 1 1 1 0 0 0 1 0 0 0 0 0 0 1 1 1 0
-//0 0 0 0 1 0 0 1 1 1 1 1 1 1 0 0 0 0 1 1
-//1 1 1 1 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1
-//1 0 0 1 0 0 1 1 1 0 1 1 0 1 0 1 0 0 0 1
-//1 1 0 0 0 0 0 0 1 0 0 1 0 1 0 1 0 0 0 1
-//1 1 1 1 0 0 0 0 1 1 0 1 0 1 0 1 0 0 0 1
-//1 1 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1 1 1
-//1 0 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 1 0 0
-//1 1 0 0 1 1 1 0 0 1 0 0 1 1 1 0 0 1 0 0
-//0 1 1 0 1 0 0 0 1 1 0 1 1 0 1 0 0 1 0 0
-//1 0 1 1 1 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0
-//0 0 0 0 1 0 0 1 1 1 1 1 1 1 1 0 0 1 0 0
-//1 1 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0
-//1 0 0 1 0 0 1 1 1 0 0 0 0 1 0 0 0 1 0 0
-//1 1 0 0 0 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0
-//1 1 1 1 0 0 0 0 1 1 0 1 1 0 0 0 0 1 0 1
-
-
