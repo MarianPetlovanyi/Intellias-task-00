@@ -92,7 +92,7 @@ TEST_CASE("Matrix 2x2 positive 0 0"
 TEST_CASE("Matrix 2x2 negative", "0 0"
                                  "0 0"){
     std::vector<std::vector<int>> v {{0,0},{0,0}};
-    CHECK(findPath(v)==true);
+    REQUIRE(findPath(v)==false);
 }
 TEST_CASE("Matrix 20x20 positive big maze(path exist)") {
     std::vector<std::vector<int>> v{{1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -206,5 +206,5 @@ TEST_CASE("Matrix 19x20 negative, incorrect maze size(no path)") {
                                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
                                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
-    CHECK(findPath(v) == true);
+    REQUIRE(findPath(v) == false);
 }
